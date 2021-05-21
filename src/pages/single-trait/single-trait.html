@@ -1,0 +1,104 @@
+<!--
+  Generated template for the SingleTraitPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Einzelnes Merkmal</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-title>{{ "title.primaryParent" | translate }}</ion-title>
+  <ion-list>
+    <ion-item>
+      <ion-label>{{ "label.trait1" | translate }}</ion-label>
+      <ion-select [(ngModel)]="firstTraitPrimaryParent" (ionChange)="onChangeFirstArray()">
+        <ion-option *ngFor="let trait of traits; let i = index" [value]="trait">{{ trait.name | translate }}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>{{ "label.trait2" | translate }}</ion-label>
+      <ion-select [(ngModel)]="secondTraitPrimaryParent" (ionChange)="onChangeSecondArray()">
+        <ion-option *ngFor="let trait of firstTraitsCopyArray" [value]="trait.name">{{ trait.name | translate }}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>{{ "label.trait3" | translate }}</ion-label>
+      <ion-select [(ngModel)]="thirdTraitPrimaryParent">
+        <ion-option *ngFor="let trait of secondTraitsArray" [value]="trait.name">{{ trait.name | translate }}</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-title>{{ "title.secondaryParent" | translate }}</ion-title>
+  <ion-list>
+    <ion-item>
+      <ion-label>{{ "label.trait1" | translate }}</ion-label>
+      <ion-select [(ngModel)]="firstTraitSecondaryParent">
+        <ion-option *ngFor="let trait of traits" [value]="trait.name">{{ trait.name | translate }}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>{{ "label.trait2" | translate }}</ion-label>
+      <ion-select [(ngModel)]="secondTraitSecondaryParent">
+        <ion-option *ngFor="let trait of traits" [value]="trait.name">{{ trait.name | translate }}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>{{ "label.trait3" | translate }}</ion-label>
+      <ion-select [(ngModel)]="thirdTraitSecondaryParent">
+        <ion-option *ngFor="let trait of traits" [value]="trait.name">{{ trait.name | translate }}</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-title>{{ "title.child" | translate }}</ion-title>
+  <ion-list>
+    <ion-item>
+      <ion-label>{{ "label.trait" | translate }}</ion-label>
+      <ion-select [(ngModel)]="firstTraitChild">
+        <ion-option *ngFor="let trait of traits" [value]="trait.name">{{ trait.name | translate }}</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-title>{{ "title.teen" | translate }}</ion-title>
+  <ion-list>
+    <ion-item>
+      <ion-label>{{ "label.trait" | translate }}</ion-label>
+      <ion-select [(ngModel)]="firstTraitTeen">
+        <ion-option *ngFor="let trait of traits" [value]="trait.name">{{ trait.name | translate }}</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label>{{ "label.gender" | translate }}</ion-label>
+      <ion-checkbox [(ngModel)]="gender"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>{{ "label.childAspiration" | translate }}</ion-label>
+      <ion-checkbox [(ngModel)]="childAspiration"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>{{ "label.aspiration" | translate }}</ion-label>
+      <ion-checkbox [(ngModel)]="adultAspiration"></ion-checkbox>
+    </ion-item>
+
+  </ion-list>
+
+  <button ion-button round>{{ "button.generate" | translate }}</button>
+  <button ion-button round>{{ "button.delete" | translate }}</button>
+
+
+</ion-content>

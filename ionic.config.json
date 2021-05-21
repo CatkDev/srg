@@ -1,0 +1,7 @@
+{
+  "name": "sims-random-generator",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
